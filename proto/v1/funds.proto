@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+import "v1/empty.proto";
+
+package crypay.v1;
+option go_package = "crypay/v1";
+
+
+service FundsService {
+  rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp) {}
+  rpc AccountExist(AccountExistReq) returns (AccountExistResp) {}
+  rpc GetFunds(GetFundsReq) returns (GetFundsResp) {}
+  rpc GetAccount(GetAccountReq) returns (GetAccountRes) {}
+  rpc TaskCompleted(TaskCompletedReq) returns (TaskCompletedRes) {}
+  rpc UserTaskHistory(UserTaskHistoryReq) returns (UserTaskHistoryRes) {}
+}
+
+message GetAccountReq {
+  string id = 1;
+}
+
+message Account {
+  string id = 1;
+  string login = 2;
+  string status = 3;
+  double funds = 4;
+  double task_price = 5;
+}
+message GetAccountRes {
+    Account account = 1;
+}
+message UserTaskHistoryReq {
+  int64 limit = 1;
+  int64 offset = 2;
+  string user_id = 3;
+}
+
+message UserTaskHistoryRes {
+  int64 total = 1;
+  repeated TaskHistoryRecord records = 2;
+}
+
+message TaskHistoryRecord {
+  string process_id = 1;
+  string task_id = 3;
+  string task_type = 4;
+  double task_price = 5;
+}
+
+message AccountExistReq {
+  string id = 1;
+}
+message AccountExistResp {
+  bool exist = 1;
+}
+message TaskCompletedReq {
+  string process_id = 1;
+  string profile_id = 2;
+  string task_id = 3;
+  string task_type = 4;
+  string user_id = 5;
+}
+
+message TaskCompletedRes {
+
+}
+
+message CreateAccountReq {
+  string login = 1;
+  string id = 2;
+}
+
+message CreateAccountResp {
+	string id =1;
+}
+
+message GetFundsReq {
+  string login = 1;
+}
+
+message GetFundsResp {
+	double fundsLeft = 1;
+  bool isFound = 2;
+}
+
+message DecrementFundsReq {
+  string reqId = 1;
+  string login = 2;
+  int32 funds = 3;
+}
+
+message DecrementFundsResp {
+	int32 fundsLeft = 1;
+}
+
+message DecrementFundsByCodeReq {
+  string reqId = 1;
+  string login = 2;
+  string code = 3;
+}
+
+message DecrementFundsByCodeResp {
+	int32 fundsLeft = 1;
+}

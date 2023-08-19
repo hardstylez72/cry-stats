@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package crypay.v1;
+option go_package = "crypay/v1";
+
+message Empty {}
