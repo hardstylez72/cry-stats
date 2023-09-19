@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1b6cd0-98ed-44d0-b71e-09285668e462" name="Changes" comment="backup">
-      <change afterPath="$PROJECT_DIR$/internal/account/promo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/00006_accounts_upd.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/account/controller_adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/controller_adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/account/repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/repo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/order/controller_adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/order/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/order/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/order/create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/empty.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/empty.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/funds.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/funds.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/funds_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/funds_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/orders.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/orders.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/v1/funds.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/v1/funds.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/promo.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/promo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +63,7 @@
       <recent name="$PROJECT_DIR$/internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/hardstylez72/cry-pay/cmd">
+  <component name="RunManager" selected="Makefile Target.deploy-dev">
     <configuration name="go build github.com/hardstylez72/cry-pay/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cry-pay" />
       <working_directory value="$PROJECT_DIR$" />
@@ -102,9 +93,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile Target.deploy-dev" />
         <item itemvalue="Go Build.go build github.com/hardstylez72/cry-pay/cmd" />
         <item itemvalue="Makefile Target.build-standalone" />
-        <item itemvalue="Makefile Target.deploy-dev" />
         <item itemvalue="Makefile Target.deploy-prod" />
       </list>
     </recent_temporary>

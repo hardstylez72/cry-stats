@@ -169,6 +169,7 @@ func (c *ControllerAdapter) AddPromo(ctx context.Context, req *v1.AddPromoReq) (
 	if _, err := c.repo.AddFundsById(ctx, req.UserId, bonus); err != nil {
 		return nil, err
 	}
+
 	return &v1.AddPromoRes{
 		Valid: true,
 		Bonus: bonus,
