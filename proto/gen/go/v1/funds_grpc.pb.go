@@ -28,6 +28,7 @@ type FundsServiceClient interface {
 	GetAccount(ctx context.Context, in *GetAccountReq, opts ...grpc.CallOption) (*GetAccountRes, error)
 	TaskCompleted(ctx context.Context, in *TaskCompletedReq, opts ...grpc.CallOption) (*TaskCompletedRes, error)
 	UserTaskHistory(ctx context.Context, in *UserTaskHistoryReq, opts ...grpc.CallOption) (*UserTaskHistoryRes, error)
+	AddPromo(ctx context.Context, in *AddPromoReq, opts ...grpc.CallOption) (*AddPromoRes, error)
 }
 
 type fundsServiceClient struct {
@@ -92,6 +93,15 @@ func (c *fundsServiceClient) UserTaskHistory(ctx context.Context, in *UserTaskHi
 	return out, nil
 }
 
+func (c *fundsServiceClient) AddPromo(ctx context.Context, in *AddPromoReq, opts ...grpc.CallOption) (*AddPromoRes, error) {
+	out := new(AddPromoRes)
+	err := c.cc.Invoke(ctx, "/crypay.v1.FundsService/AddPromo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FundsServiceServer is the server API for FundsService service.
 // All implementations must embed UnimplementedFundsServiceServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type FundsServiceServer interface {
 	GetAccount(context.Context, *GetAccountReq) (*GetAccountRes, error)
 	TaskCompleted(context.Context, *TaskCompletedReq) (*TaskCompletedRes, error)
 	UserTaskHistory(context.Context, *UserTaskHistoryReq) (*UserTaskHistoryRes, error)
+	AddPromo(context.Context, *AddPromoReq) (*AddPromoRes, error)
 	mustEmbedUnimplementedFundsServiceServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedFundsServiceServer) TaskCompleted(context.Context, *TaskCompl
 }
 func (UnimplementedFundsServiceServer) UserTaskHistory(context.Context, *UserTaskHistoryReq) (*UserTaskHistoryRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserTaskHistory not implemented")
+}
+func (UnimplementedFundsServiceServer) AddPromo(context.Context, *AddPromoReq) (*AddPromoRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddPromo not implemented")
 }
 func (UnimplementedFundsServiceServer) mustEmbedUnimplementedFundsServiceServer() {}
 
@@ -248,6 +262,24 @@ func _FundsService_UserTaskHistory_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FundsService_AddPromo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddPromoReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FundsServiceServer).AddPromo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crypay.v1.FundsService/AddPromo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FundsServiceServer).AddPromo(ctx, req.(*AddPromoReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FundsService_ServiceDesc is the grpc.ServiceDesc for FundsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var FundsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UserTaskHistory",
 			Handler:    _FundsService_UserTaskHistory_Handler,
+		},
+		{
+			MethodName: "AddPromo",
+			Handler:    _FundsService_AddPromo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

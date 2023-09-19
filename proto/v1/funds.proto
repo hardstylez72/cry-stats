@@ -13,6 +13,17 @@ service FundsService {
   rpc GetAccount(GetAccountReq) returns (GetAccountRes) {}
   rpc TaskCompleted(TaskCompletedReq) returns (TaskCompletedRes) {}
   rpc UserTaskHistory(UserTaskHistoryReq) returns (UserTaskHistoryRes) {}
+  rpc AddPromo(AddPromoReq) returns (AddPromoRes) {}
+}
+
+message AddPromoReq {
+  string user_id = 1;
+  string promo = 2;
+}
+
+message AddPromoRes {
+  bool valid = 1;
+  double bonus = 2;
 }
 
 message GetAccountReq {
@@ -25,6 +36,7 @@ message Account {
   string status = 3;
   double funds = 4;
   double task_price = 5;
+  optional string promo = 6;
 }
 message GetAccountRes {
     Account account = 1;

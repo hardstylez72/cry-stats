@@ -27,7 +27,7 @@ func (c *ControllerAdapter) GetAccount(ctx context.Context, req *v1.GetAccountRe
 		return nil, err
 	}
 
-	return &v1.GetAccountRes{
+	r := &v1.GetAccountRes{
 		Account: &v1.Account{
 			Id:        acc.Id,
 			Login:     acc.Login,
@@ -35,7 +35,12 @@ func (c *ControllerAdapter) GetAccount(ctx context.Context, req *v1.GetAccountRe
 			Funds:     acc.Funds,
 			TaskPrice: acc.TaskPrice,
 		},
-	}, nil
+	}
+	if acc.Promo.Valid {
+		r.Account.Promo = &acc.Promo.String
+	}
+
+	return r, nil
 }
 
 func (c *ControllerAdapter) CreateAccount(ctx context.Context, req *v1.CreateAccountReq) (*v1.CreateAccountResp, error) {
@@ -132,5 +137,40 @@ func (c *ControllerAdapter) UserTaskHistory(ctx context.Context, req *v1.UserTas
 	return &v1.UserTaskHistoryRes{
 		Total:   0,
 		Records: tmp,
+	}, nil
+}
+
+func (c *ControllerAdapter) AddPromo(ctx context.Context, req *v1.AddPromoReq) (*v1.AddPromoRes, error) {
+
+	a, err := c.repo.GetAccount(ctx, req.GetUserId())
+	if err != nil {
+		return nil, err
+	}
+
+	if a.Promo.Valid {
+		return &v1.AddPromoRes{
+			Valid: false,
+			Bonus: 0,
+		}, nil
+	}
+
+	bonus := PromoBonus(req.Promo)
+	if bonus == 0 {
+		return &v1.AddPromoRes{
+			Valid: false,
+			Bonus: 0,
+		}, nil
+	}
+
+	if err := c.repo.AddPromo(ctx, req.UserId, req.GetPromo()); err != nil {
+		return nil, err
+	}
+
+	if _, err := c.repo.AddFundsById(ctx, req.UserId, bonus); err != nil {
+		return nil, err
+	}
+	return &v1.AddPromoRes{
+		Valid: true,
+		Bonus: bonus,
 	}, nil
 }

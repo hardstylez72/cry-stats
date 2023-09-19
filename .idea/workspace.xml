@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1b6cd0-98ed-44d0-b71e-09285668e462" name="Changes" comment="backup">
-      <change afterPath="$PROJECT_DIR$/standalone.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/account/promo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/00006_accounts_upd.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/account/controller_adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/controller_adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/arbitrum/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/arbitrum/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/env.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/env.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processor/processing.go" beforeDir="false" afterPath="$PROJECT_DIR$/processor/processing.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/repo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/order/controller_adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/order/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/order/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/order/create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/empty.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/empty.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/funds.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/funds.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/funds_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/funds_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/gen/go/v1/orders.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/gen/go/v1/orders.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/v1/funds.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/v1/funds.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,37 +42,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kcv/GolandProjects/cry-pay&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/kcv/GolandProjects/cry-pay/migrations",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/migrations" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/internal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/account" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/internal/task" />
       <recent name="$PROJECT_DIR$/internal/task/processor" />
       <recent name="$PROJECT_DIR$/internal" />
-      <recent name="$PROJECT_DIR$/task" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile Target.build-standalone">
+  <component name="RunManager" selected="Go Build.go build github.com/hardstylez72/cry-pay/cmd">
     <configuration name="go build github.com/hardstylez72/cry-pay/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cry-pay" />
       <working_directory value="$PROJECT_DIR$" />
@@ -97,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Makefile Target.build-standalone" />
         <item itemvalue="Go Build.go build github.com/hardstylez72/cry-pay/cmd" />
+        <item itemvalue="Makefile Target.build-standalone" />
         <item itemvalue="Makefile Target.deploy-dev" />
         <item itemvalue="Makefile Target.deploy-prod" />
       </list>

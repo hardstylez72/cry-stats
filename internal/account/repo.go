@@ -86,18 +86,19 @@ func (r *Repository) AccountExist(ctx context.Context, id string) (*bool, error)
 }
 
 type Account struct {
-	Id        string  `db:"id"`
-	Login     string  `db:"login"`
-	Funds     float64 `db:"funds"`
-	Status    string  `db:"status"`
-	TaskPrice float64 `db:"task_price"`
+	Id        string         `db:"id"`
+	Login     string         `db:"login"`
+	Funds     float64        `db:"funds"`
+	Status    string         `db:"status"`
+	TaskPrice float64        `db:"task_price"`
+	Promo     sql.NullString `db:"promo"`
 }
 
 var ErrAccountNotFound = errors.New("account not found")
 
 func (r *Repository) GetAccount(ctx context.Context, id string) (*Account, error) {
 
-	q := `select id, login, funds, status, task_price from accounts where id = $1`
+	q := `select id, login, funds, status, task_price, promo from accounts where id = $1`
 
 	var acc Account
 	err := r.conn.GetContext(ctx, &acc, q, id)
@@ -186,6 +187,17 @@ func (r *Repository) DecrementFundsByUserId(ctx context.Context, id string, valu
 	return nil
 }
 
+func (r *Repository) AddPromo(ctx context.Context, id, promo string) (err error) {
+
+	q := `update accounts set promo = $1 where id = $2`
+
+	_, err = r.conn.ExecContext(ctx, q, promo, id)
+	if err != nil && err != sql.ErrNoRows {
+		return err
+	}
+
+	return nil
+}
 func (r *Repository) AddFundsById(ctx context.Context, id string, value float64) (newFunds int, err error) {
 
 	q := `update accounts set funds = funds + $1 where id = $2`

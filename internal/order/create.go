@@ -70,8 +70,8 @@ func GenerateAm(base int64) float64 {
 
 	first := strconv.Itoa(int(base))
 
-	first = first + "."
-	precision := 2
+	first = first + ".0"
+	precision := 1
 	i := 0
 	for i < precision {
 		rInt := int(rand.New(seed).Int63n(9))
