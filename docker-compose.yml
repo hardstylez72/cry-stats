@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pay:latest
     restart: always
     env_file:
       - .env

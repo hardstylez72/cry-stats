@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1b6cd0-98ed-44d0-b71e-09285668e462" name="Changes" comment="backup">
+      <change beforePath="$PROJECT_DIR$/.idea/cry-pay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cry-pay.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/account/controller_adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/controller_adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/account/promo.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/promo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/arbitrum/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/arbitrum/client.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,26 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/kcv/GolandProjects/cry-pay/migrations",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kcv/GolandProjects/cry-pay&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/migrations" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/migrations" />
       <recent name="$PROJECT_DIR$/internal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -63,7 +65,7 @@
       <recent name="$PROJECT_DIR$/internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile Target.deploy-dev">
+  <component name="RunManager" selected="Go Build.go build github.com/hardstylez72/cry-pay/cmd">
     <configuration name="go build github.com/hardstylez72/cry-pay/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cry-pay" />
       <working_directory value="$PROJECT_DIR$" />
@@ -93,10 +95,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Makefile Target.deploy-dev" />
         <item itemvalue="Go Build.go build github.com/hardstylez72/cry-pay/cmd" />
-        <item itemvalue="Makefile Target.build-standalone" />
         <item itemvalue="Makefile Target.deploy-prod" />
+        <item itemvalue="Makefile Target.deploy-dev" />
+        <item itemvalue="Makefile Target.build-standalone" />
       </list>
     </recent_temporary>
   </component>
@@ -110,5 +112,16 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/internal/importers/arbiscan.go</url>
+          <line>57</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

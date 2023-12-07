@@ -9,7 +9,11 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"go.uber.org/ratelimit"
 )
+
+var rl = ratelimit.New(4, ratelimit.Per(time.Second))
 
 const apiUrlMaskForTokens = `
 https://api.arbiscan.io/api
@@ -88,6 +92,9 @@ func New(c *Config) *Client {
 }
 
 func (c *Client) GetListTx(ctx context.Context, net, addr string, offset int) (*TxList, error) {
+
+	rl.Take()
+
 	reqUrl := fmt.Sprintf(apiUrlMaskForTokens, c.contractAddr[net], addr, 1, offset+1, c.c.Token)
 	reqUrl = strings.ReplaceAll(reqUrl, "\n", "")
 
